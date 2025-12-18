@@ -1,5 +1,5 @@
 <?php
-function mostRecent($text) {
+function mostRecent($text): string {
 
     $text = mb_substr($text, 0, 1000);
 
@@ -22,10 +22,10 @@ function mostRecent($text) {
 
     $maxWords = array_keys($counts, $maxCount);
 
-    return end($maxWords);
+    return end(array: $maxWords);
 }
 $texxt = "Расскажите про покупки! - Про какие про покупки? 
 Про покупки, про покупки, про покупочки свои.\n";
 echo $texxt;
-$OftenWords = mostRecent($texxt);
+$OftenWords = mostRecent(text: $texxt);
 echo "Самое часто встречающиеся слово: '$OftenWords'";

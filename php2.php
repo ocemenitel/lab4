@@ -27,6 +27,6 @@ function findPerfectNumbers($array) {
 $numbers = [6, 28, 12, 16, 5, 7, 496];
 echo "Числа в массиве: ";
 print_r($numbers);
-$perfectNumbers = findPerfectNumbers($numbers);
+$perfectNumbers = findPerfectNumbers(array: $numbers);
 echo "Идеальные и Совершенные числа: ";
 print_r($perfectNumbers);
