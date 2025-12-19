@@ -1,13 +1,14 @@
 <?php
-function mostRecent($text): string {
+function mostRecent($text): string
+{
 
-    $text = mb_substr($text, 0, 1000);
+    $text = mb_substr(string: $text, start: 0, length: 1000);
 
-    $text = mb_strtolower($text);
+    $text = mb_strtolower(string: $text);
 
-    $text = preg_replace('/[^\w\s]/u', '', $text);
+    $text = preg_replace( '/[^\w\s]/u',  '', subject: $text);
 
-    $words = preg_split('/\s+/', $text, -1, PREG_SPLIT_NO_EMPTY);
+    $words = preg_split('/\s+/', subject: $text, limit: -1, flags: PREG_SPLIT_NO_EMPTY);
 
     $counts = [];
     foreach ($words as $word) {
@@ -20,7 +21,7 @@ function mostRecent($text): string {
 
     $maxCount = max($counts);
 
-    $maxWords = array_keys($counts, $maxCount);
+    $maxWords = array_keys(array: $counts, filter_value: $maxCount);
 
     return end(array: $maxWords);
 }

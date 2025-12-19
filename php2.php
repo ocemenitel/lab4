@@ -1,5 +1,6 @@
 <?php
-function isPerfectNumber($num) {
+function isPerfectNumber($num): bool
+{
     if ($num <= 0) {
         return false;
     }
@@ -13,10 +14,11 @@ function isPerfectNumber($num) {
     return $sum == $num;
 }
 
-function findPerfectNumbers($array) {
+function findPerfectNumbers($array): array
+{
     $result = [];
     foreach ($array as $num) {
-        if (isPerfectNumber($num)) {
+        if (isPerfectNumber(num: $num)) {
             $result[] = $num;
         }
     }
@@ -26,7 +28,7 @@ function findPerfectNumbers($array) {
 
 $numbers = [6, 28, 12, 16, 5, 7, 496];
 echo "Числа в массиве: ";
-print_r($numbers);
+print_r( $numbers);
 $perfectNumbers = findPerfectNumbers(array: $numbers);
 echo "Идеальные и Совершенные числа: ";
 print_r($perfectNumbers);
